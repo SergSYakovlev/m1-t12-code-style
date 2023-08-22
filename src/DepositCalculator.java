@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
 public class DepositCalculator {
+    public static void main(String[] args) {
+        new DepositCalculator().processMenu();
+    }
+
     double calculateComplexPercent(double amount, int depositPeriod) {
         double pay = amount * Math.pow(1.005, 12.0 * depositPeriod);
         return calculateAmount(pay);
@@ -39,10 +43,5 @@ public class DepositCalculator {
 
         System.out.println("Результат вклада: " + amount + " за " + period + " лет превратятся в " + outAmount);
     }
-
-    public static void main(String[] args) {
-        new DepositCalculator().processMenu();
-    }
-
 
 }
