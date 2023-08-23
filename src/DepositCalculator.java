@@ -7,11 +7,15 @@ public class DepositCalculator {
 
     double calculateComplexPercent(double amount, int depositPeriod) {
         double pay = amount * Math.pow(1.005, 12.0 * depositPeriod);
+        /* Если не использовать третий изменяемый параметр - процент, то непонятно откуда берется цифра - 1,005.
+        Цифра 12.0 смотрится странно, опрделять кол-во месяцев с помощью double - неуверен, что это хорошее решение.*/
         return calculateAmount(pay);
     }
 
     double calculateSimplePercent(double amount, int depositPeriod) {
         double pay = amount * (1 + 0.06 * depositPeriod);
+        /* Я все же полагаю, чтобы каждый раз не менять функцию, здесь необходим третий параметр, как база для
+        расчета суммы. 6% - очень часто изменяемая величина. */
         return calculateAmount(pay);
     }
 
